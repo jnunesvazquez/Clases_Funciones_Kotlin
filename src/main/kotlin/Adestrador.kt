@@ -1,58 +1,29 @@
-class Adestrador {
+class Adestrador : Seleccion{
 
-    var id = 545
-    var nome = "Hector"
-    var apelido = "Failde"
-    var edade = 20
     var idFederacion = "Buzon de suicidios"
 
-    constructor(id: Int, nome: String, apelido: String, edade: Int, idFederacion: String) {
-        this.id = id
-        this.nome = nome
-        this.apelido = apelido
-        this.edade = edade
+    constructor(id: Int, nome: String, apelido: String, edade: Int, idFederacion: String) : super(
+        id,
+        nome,
+        apelido,
+        edade
+    ) {
         this.idFederacion = idFederacion
     }
 
-    fun concentrarse() : Unit {}
+    override fun concentrarse(tiempoDescanso : Int, tiempoEntreno : Int) : Int{
+        println("Concentrase a selección e o tempo")
+        return tiempoEntreno + tiempoDescanso
+    }
 
-    fun viaxar(paisDestino : String) : String = paisDestino
+    override fun viaxar(paisDestino : String) : String {
+        println("Viaxa o adestrador")
+        return paisDestino
+    }
 
     fun dirixirPartido() : Unit {}
 
     fun dirixirAdestramento() : Unit {}
-
-    @JvmName("getId1")
-    fun getId() : Int = id
-
-    @JvmName("setId1")
-    fun setId(id: Int) : Unit {
-        this.id = id;
-    }
-
-    @JvmName("getNome1")
-    fun getNome() : String = nome
-
-    @JvmName("setNome1")
-    fun setNome(nome: String) : Unit {
-        this.nome = nome;
-    }
-
-    @JvmName("getApelido1")
-    fun getApelido() : String = apelido
-
-    @JvmName("setApelido1")
-    fun setApelido(apelido: String) : Unit {
-        this.apelido = apelido;
-    }
-
-    @JvmName("getEdade1")
-    fun getEdade() : Int = edade
-
-    @JvmName("setEdade1")
-    fun setEdade(edade: Int) : Unit {
-        this.edade = edade;
-    }
 
     @JvmName("getIdFederacion1")
     fun getIdFederacion() : String = idFederacion
